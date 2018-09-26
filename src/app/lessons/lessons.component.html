@@ -1,0 +1,23 @@
+<ul class="list-group">
+  <li *ngFor="let lesson of lessons" class="list-group-item">
+    <div class="row">
+      <div class="col-sm-1">
+        {{lesson.time}}
+      </div>
+      <div class="col-sm-1 font-weight-bold">
+        {{lesson.duration}} MINS
+      </div>
+      <div class="col-sm-1 ">
+        <img src="http://placehold.it/30x40&text=First image" class="border border-warning" alt="First image">
+      </div>
+      <div class="col-sm-8">
+        {{lesson.note}}
+        <br />
+        <span class="col-sm-1 font-weight-light"> {{lesson.type}}</span>
+      </div>
+      <div class="col-sm-1">
+        <span class="badge badge-primary badge-pill">1</span>
+      </div>
+    </div>
+  </li>
+</ul>
