@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { Lesson } from './lesson';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Student } from './student';
 @Injectable({
   providedIn: 'root'
 })
 export class LessonService {
+/*
   datetime = new Date();
   time = this.datetime.getHours() + ':' + this.datetime.getMinutes();
   lessons: Lesson[] =
@@ -34,10 +36,16 @@ export class LessonService {
       note: 'A note about what students need to work on this lesson'
     }
     ];
+    */
   private lessonsUrl = 'http://localhost:50740/api/Lessons';
+  private StudentsUrl = 'http://localhost:50740/api/Students';
   constructor(private http: HttpClient) { }
   getLessons(): Observable<Lesson[]> {
     return this.http.get<Lesson[]>(this.lessonsUrl);
+    // return of(this.lessons);
+  }
+  getStudents():  Observable<Student[]> {
+    return this.http.get<Student[]>(this.StudentsUrl);
     // return of(this.lessons);
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LessonService } from '../lesson.service';
+import { Student } from '../student';
 
 @Component({
   selector: 'app-student-img',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentImgComponent implements OnInit {
 
-  constructor() { }
+  students: Student[];
+  constructor(private lessonService: LessonService) { }
 
   ngOnInit() {
+    this.getStudents();
+  }
+  getStudents(): void {
+    this.lessonService.getStudents().subscribe(s => this.students = s);
   }
 
 }

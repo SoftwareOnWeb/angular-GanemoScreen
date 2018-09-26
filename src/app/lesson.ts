@@ -1,3 +1,5 @@
+import { Guide } from './guide';
+
 export class Lesson {
   id: number;
   dateTime: string;
@@ -5,4 +7,5 @@ export class Lesson {
   duration: number;
   type: string;
   note: string;
+  guide: Guide;
 }

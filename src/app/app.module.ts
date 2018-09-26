@@ -5,15 +5,19 @@ import { AppComponent } from './app.component';
 import { LessonsComponent } from './lessons/lessons.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentImgComponent } from './student-img/student-img.component';
+import { VerticalTimelineModule } from 'angular-vertical-timeline';
+import { MytimelineComponent } from './mytimeline/mytimeline.component';
 @NgModule({
   declarations: [
     AppComponent,
     LessonsComponent,
-    StudentImgComponent
+    StudentImgComponent,
+    MytimelineComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    VerticalTimelineModule
   ],
   providers: [],
   bootstrap: [AppComponent]
